@@ -1,12 +1,17 @@
 import { app, BrowserWindow } from "electron";
-import { db } from "./db/index";
-import { test } from "./db/schema/schema";
+// import { db } from "./db/index";
+// import { test } from "./db/schema/schema";
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({});
-  mainWindow.webContents.openDevTools();
+  mainWindow = new BrowserWindow({
+    minWidth: 800,
+    minHeight: 600,
+    autoHideMenuBar: true,
+  });
+  // mainWindow.webContents.openDevTools();
   // Vite dev server URL
+
   mainWindow.loadURL("http://localhost:5173");
   mainWindow.on("closed", () => (mainWindow = null));
 }
@@ -27,10 +32,10 @@ app.on("activate", () => {
   }
 });
 
-const load = async () => {
-  const result = await db.insert(test).values({
-    id: 7,
-  });
-  console.log("result", result);
-};
+// const load = async () => {
+//   const result = await db.insert(test).values({
+//     id: 7,
+//   });
+//   console.log("result", result);
+// };
 // load();

@@ -1,0 +1,21 @@
+.icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  background-color: currentColor;
+  color: currentColor;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+@mixin icon($icon) {
+  -webkit-mask: url($icon) center center / contain no-repeat;
+  -webkit-mask-image: url($icon);
+  mask-image: url($icon);
+}
+
+.icon-setting {
+  @include icon('assets/icons/setting.svg');
+}

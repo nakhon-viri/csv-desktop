@@ -301,8 +301,8 @@ function App() {
       >
         <div className="absolute top-0 bottom-0 right-0 left-0">
           <div className="flex">
-            <div className="flex grow basis-56 shrink-0 justify-end">
-              <div className="">
+            <div className="flex grow basis-36 shrink-0 justify-end">
+              <div className=" w-36">
                 <div>
                   <div className="mb-2 pl-3 text-muted-foreground text-xs text-ellipsis text-nowrap overflow-hidden">
                     platform
@@ -323,7 +323,7 @@ function App() {
               </div>
             </div>
             <div className="flex grow shrink basis-[576px] items-start">
-              <div className=" h-full w-full pr-3 pb-96">
+              <div className=" h-full w-[576px] pr-3 pb-96">
                 <table className="table-auto w-full border-separate border-spacing-2">
                   <thead>
                     <tr>

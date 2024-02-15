@@ -1,9 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap");
-@import './styles/icons.scss';
+@import "./styles/icons.scss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   :root {
@@ -64,4 +63,45 @@
 
 * {
   font-family: "Poppins", "Sarabun", sans-serif;
+}
+
+.menu-primary-enter {
+  transform: scale(0.93);
+  opacity: 0;
+}
+.menu-primary-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 200ms ease;
+}
+.menu-primary-exit {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 200ms ease;
+}
+.menu-primary-exit-active {
+  transform: scale(0.93);
+  opacity: 0;
+  transition: all 150ms ease;
+}
+
+//secondary
+.menu-secondary-enter {
+  transform: scale(1.1);
+  opacity: 0;
+}
+.menu-secondary-enter-active {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 200ms ease;
+}
+.menu-secondary-exit {
+  transform: scale(1);
+  opacity: 1;
+  transition: all 100ms ease;
+}
+.menu-secondary-exit-active {
+  transform: scale(1.1);
+  opacity: 0;
+  transition: all 200ms ease;
 }

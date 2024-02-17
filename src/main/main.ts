@@ -177,6 +177,7 @@ const getColumnConfig = async (args) => {
 
 function createWindow() {
   mainWindow = new BrowserWindow({
+    // minWidth: 1200,
     minWidth: 800,
     minHeight: 600,
     autoHideMenuBar: true,

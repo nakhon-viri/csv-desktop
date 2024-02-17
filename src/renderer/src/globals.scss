@@ -63,22 +63,36 @@
 
 * {
   font-family: "Poppins", "Sarabun", sans-serif;
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
+  }
 }
 
 .menu-primary-enter {
   transform: scale(0.93);
   opacity: 0;
 }
+
 .menu-primary-enter-active {
   transform: scale(1);
   opacity: 1;
   transition: all 200ms ease;
 }
+
 .menu-primary-exit {
   transform: scale(1);
   opacity: 1;
   transition: all 200ms ease;
 }
+
 .menu-primary-exit-active {
   transform: scale(0.93);
   opacity: 0;
@@ -90,16 +104,19 @@
   transform: scale(1.1);
   opacity: 0;
 }
+
 .menu-secondary-enter-active {
   transform: scale(1);
   opacity: 1;
   transition: all 200ms ease;
 }
+
 .menu-secondary-exit {
   transform: scale(1);
   opacity: 1;
   transition: all 100ms ease;
 }
+
 .menu-secondary-exit-active {
   transform: scale(1.1);
   opacity: 0;

@@ -29622,16 +29622,16 @@ function requirePromise() {
 var promiseExports = requirePromise();
 const mysql = /* @__PURE__ */ getDefaultExportFromCjs(promiseExports);
 const poolConnection = mysql.createPool({
-  host: "kathydb-do-user-15641127-0.c.db.ondigitalocean.com",
-  user: "doadmin",
-  database: "Sale",
-  password: "AVNS_GOHw8oogOS85hjqFb1l",
-  port: 25060
-  // host: "localhost",
-  // user: "root",
-  // database: "sale",
-  // password: "",
-  // port: 3306,
+  // host: "kathydb-do-user-15641127-0.c.db.ondigitalocean.com",
+  // user: "doadmin",
+  // database: "Sale",
+  // password: "AVNS_GOHw8oogOS85hjqFb1l",
+  // port: 25060,
+  host: "localhost",
+  user: "root",
+  database: "sale",
+  password: "1234",
+  port: 3306
 });
 const db = drizzle(poolConnection);
 let mainWindow;
@@ -29784,6 +29784,7 @@ const getColumnConfig = async (args) => {
 };
 function createWindow() {
   mainWindow = new electron.BrowserWindow({
+    // minWidth: 1200,
     minWidth: 800,
     minHeight: 600,
     autoHideMenuBar: true,

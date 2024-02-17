@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 // import { Button } from "@/components/ui/button"
 import UploadPng from "@/assets/images/upload.jpg";
 import {
@@ -86,9 +86,22 @@ function App() {
     return moment(resultDate.toString()).format("yyyy/MM/DD HH:mm:ss");
   };
 
-  const handleFileUpload = (e: any) => {
+  const handleFileUpload = async (e: any) => {
+    let column: any = {}
+    try {
+      const response = await window.electron.columnConfig({
+        platform: "shopee",
+      })
+      column = response[0].reduce((acc, cur) => {
+        acc[cur.column_db] = cur.column_value
+        return acc
+      }, {})
+    } catch (error) {
+      console.log("error", error);
+    }
+
+    console.log('column', column)
     setData([]);
-    // setHeader([]);
     const reader = new FileReader();
     reader.readAsBinaryString(e.target.files[0]);
     reader.onload = async (er: any) => {
@@ -161,77 +174,77 @@ function App() {
       parsedData.forEach((dataArr: any) => {
         if (dataArr["สถานะการสั่งซื้อ"] === "ยกเลิกแล้ว") return;
         dataValue.push({
-          order_id: dataArr["หมายเลขคำสั่งซื้อ"],
-          order_date: moment(dataArr["วันที่ทำการสั่งซื้อ"]).format(
+          order_id: dataArr[column.order_id],
+          order_date: moment(dataArr[column.order_date]).format(
             "yyyy/MM/DD HH:mm:ss"
           ),
-          commission: dataArr["ค่าคอมมิชชั่น"] || 0,
-          quantity: +dataArr["จำนวน"] || 0,
-          status_order: dataArr["สถานะการสั่งซื้อ"],
-          cancel_reason: dataArr["เหตุผลในการยกเลิกคำสั่งซื้อ"],
-          status_return: dataArr["สถานะการคืนเงินหรือคืนสินค้า"],
-          name_buyer: dataArr["ชื่อผู้ใช้ (ผู้ซื้อ)"],
-          paid_date: dataArr["เวลาการชำระสินค้า"]
-            ? moment(dataArr["เวลาการชำระสินค้า"]).format("yyyy/MM/DD HH:mm:ss")
+          commission: dataArr[column.commission] || 0,
+          quantity: +dataArr[column.quantity] || 0,
+          status_order: dataArr[column.status_order],
+          cancel_reason: dataArr[column.cancel_reason],
+          status_return: dataArr[column.status_return],
+          name_buyer: dataArr[column.name_buyer],
+          paid_date: dataArr[column.paid_date]
+            ? moment(dataArr[column.paid_date]).format("yyyy/MM/DD HH:mm:ss")
             : "",
-          paid_channel: dataArr["ช่องทางการชำระเงิน"],
-          paid_channel_detail: dataArr["ช่องทางการชำระเงิน (รายละเอียด) _1"],
-          installment_plan: dataArr["แผนการผ่อนชำระ"],
-          fee_percent: dataArr["ค่าธรรมเนียม (%)"]
-            ? dataArr["ค่าธรรมเนียม (%)"].replace("%", "")
+          paid_channel: dataArr[column.paid_channel],
+          paid_channel_detail: dataArr[column.paid_channel_detail],
+          installment_plan: dataArr[column.installment_plan],
+          fee_percent: dataArr[column.fee_percent]
+            ? dataArr[column.fee_percent].replace("%", "")
             : 0,
-          shipping_option: dataArr["ตัวเลือกการจัดส่ง"],
-          shipping_method: dataArr["วิธีการจัดส่ง"],
-          tracking_number: dataArr["*หมายเลขติดตามพัสดุ"],
-          expected_delivery_date: dataArr["วันที่คาดว่าจะทำการจัดส่งสินค้า"]
-            ? moment(dataArr["วันที่คาดว่าจะทำการจัดส่งสินค้า"]).format(
-                "yyyy/MM/DD HH:mm:ss"
-              )
+          shipping_option: dataArr[column.shipping_option],
+          shipping_method: dataArr[column.shipping_method],
+          tracking_number: dataArr[column.tracking_number],
+          expected_delivery_date: dataArr[column.expected_delivery_date]
+            ? moment(dataArr[column.expected_delivery_date]).format(
+              "yyyy/MM/DD HH:mm:ss"
+            )
             : "",
-          delivery_date: dataArr["เวลาส่งสินค้า"]
-            ? moment(dataArr["เวลาส่งสินค้า"]).format("yyyy/MM/DD HH:mm:ss")
+          delivery_date: dataArr[column.delivery_date]
+            ? moment(dataArr[column.delivery_date]).format("yyyy/MM/DD HH:mm:ss")
             : "",
-          sku_parent_reference_number: dataArr["เลขอ้างอิง Parent SKU"],
-          product_name: dataArr["ชื่อสินค้า"],
-          sku_reference_number: dataArr["เลขอ้างอิง SKU (SKU Reference No.)"],
-          option_name: dataArr["ชื่อตัวเลือก"],
-          initial_price: dataArr["ราคาตั้งต้น"],
-          selling_price: dataArr["ราคาขาย"],
-          returned_quantity: +dataArr["Returned quantity"],
-          net_selling_price: dataArr["ราคาขายสุทธิ"],
-          shopee_discount: dataArr["ส่วนลดจาก Shopee"],
-          seller_discount: dataArr["โค้ดส่วนลดชำระโดยผู้ขาย"],
-          code_coins_cashback: dataArr["โค้ด Coins Cashback"],
-          code_discount_shopee: dataArr["โค้ดส่วนลดชำระโดย Shopee"],
-          code: dataArr["โค้ดส่วนลด"],
-          join_bundle_deal: dataArr["เข้าร่วมแคมเปญ bundle deal หรือไม่"],
+          sku_parent_reference_number: dataArr[column.sku_parent_reference_number],
+          product_name: dataArr[column.product_name],
+          sku_reference_number: dataArr[column.sku_reference_number],
+          option_name: dataArr[column.option_name],
+          initial_price: dataArr[column.initial_price],
+          selling_price: dataArr[column.selling_price],
+          returned_quantity: +dataArr[column.returned_quantity],
+          net_selling_price: dataArr[column.net_selling_price],
+          shopee_discount: dataArr[column.shopee_discount],
+          seller_discount: dataArr[column.seller_discount],
+          code_coins_cashback: dataArr[column.code_coins_cashback],
+          code_discount_shopee: dataArr[column.code_discount_shopee],
+          code: dataArr[column.code],
+          join_bundle_deal: dataArr[column.join_bundle_deal],
           discount_bundle_deal_seller:
-            dataArr["ส่วนลด bundle deal ชำระโดยผู้ขาย"],
+            dataArr[column.discount_bundle_deal_seller],
           discount_bundle_deal_shopee:
-            dataArr["ส่วนลด bundle deal ชำระโดย Shopee"],
-          discount_coins: dataArr["ส่วนลดจากการใช้เหรียญ"],
-          all_discounts_credit_cards: dataArr["ส่วนลดทั้งหมดจากบัตรเครดิต"],
-          transaction_fee: dataArr["Transaction Fee"],
-          cost_sales_minus_coupons_coins: dataArr["ต้นทุนขายหักคูปองและcoin"],
-          shipping_cost_seller: dataArr["ค่าจัดส่งที่ชำระโดยผู้ซื้อ"],
-          shipping_cost_shopee: dataArr["ค่าจัดส่งที่ Shopee ออกให้โดยประมาณ"],
-          return_shipping_cost: dataArr["ค่าจัดส่งสินค้าคืน"],
-          service_fee: dataArr["ค่าบริการ"],
-          total_amount: dataArr["จำนวนเงินทั้งหมด"],
-          estimated_shipping_cost: dataArr["ค่าจัดส่งโดยประมาณ"],
-          customer_name: dataArr["ชื่อผู้รับ"],
-          phone: dataArr["หมายเลขโทรศัพท์"],
-          note_buyer: dataArr["หมายเหตุจากผู้ซื้อ"],
-          address: dataArr["ที่อยู่ในการจัดส่ง"],
-          country: dataArr["ประเทศ"],
-          district: dataArr["เขต/อำเภอ"],
-          zip_code: dataArr["รหัสไปรษณีย์"],
-          order_type: dataArr["ประเภทคำสั่งซื้อ"],
-          completed_date: moment(dataArr["เวลาที่ทำการสั่งซื้อสำเร็จ"]).format(
+            dataArr[column.discount_bundle_deal_shopee],
+          discount_coins: dataArr[column.discount_coins],
+          all_discounts_credit_cards: dataArr[column.all_discounts_credit_cards],
+          transaction_fee: dataArr[column.transaction_fee],
+          cost_sales_minus_coupons_coins: dataArr[column.cost_sales_minus_coupons_coins],
+          shipping_cost_seller: dataArr[column.shipping_cost_seller],
+          shipping_cost_shopee: dataArr[column.shipping_cost_shopee],
+          return_shipping_cost: dataArr[column.return_shipping_cost],
+          service_fee: dataArr[column.service_fee],
+          total_amount: dataArr[column.total_amount],
+          estimated_shipping_cost: dataArr[column.estimated_shipping_cost],
+          customer_name: dataArr[column.customer_name],
+          phone: dataArr[column.phone],
+          note_buyer: dataArr[column.note_buyer],
+          address: dataArr[column.address],
+          country: dataArr[column.country],
+          district: dataArr[column.district],
+          zip_code: dataArr[column.zip_code],
+          order_type: dataArr[column.order_type],
+          completed_date: moment(dataArr[column.completed_date]).format(
             "yyyy/MM/DD HH:mm:ss"
           ),
-          record: dataArr["บันทึก"],
-          province: dataArr["จังหวัด"],
+          record: dataArr[column.record],
+          province: dataArr[column.province],
         });
       });
       setData(dataValue);
@@ -244,17 +257,19 @@ function App() {
       }
     };
   };
-
+  const settingNode = useRef(null)
+  const mainNode = useRef(null)
   return (
     <div className=" h-screen relative w-screen flex justify-center items-center overflow-hidden">
       <CSSTransition
+        nodeRef={mainNode}
         in={!activeMenu}
         timeout={200}
         classNames="menu-primary"
         unmountOnExit
-        // onEnter={calcHeight}
+      // onEnter={calcHeight}
       >
-        <div className=" h-full w-full relative flex flex-col justify-center items-center">
+        <div ref={mainNode} className=" h-full w-full relative flex flex-col justify-center items-center">
           <input
             className=" absolute top-0 bottom-0  right-0 left-0 opacity-0"
             type="file"
@@ -287,20 +302,20 @@ function App() {
             onClick={() => setActiveMenu(true)}
             className="flex justify-center items-center fixed bottom-6 right-6 w-14 h-14 rounded-full border  cursor-pointer shadow-sm"
           >
-            {/* <img src={IconSetting} className=" h-10 w-auto" alt="" /> */}
             <span className="icon icon-setting h-6 w-6 text-muted-foreground"></span>
           </div>
         </div>
       </CSSTransition>
 
       <CSSTransition
+        nodeRef={settingNode}
         in={activeMenu}
         timeout={200}
         classNames="menu-secondary"
         unmountOnExit
       >
-        <div className="absolute top-0 bottom-0 right-0 left-0">
-          <div className="flex">
+        <div ref={settingNode} className="absolute top-0 bottom-0 right-0 left-0">
+          <div className="flex h-full pr-1">
             <div className="flex grow basis-36 shrink-0 justify-end">
               <div className=" w-36">
                 <div>
@@ -322,28 +337,30 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="flex grow shrink basis-[576px] items-start">
-              <div className=" h-full w-[576px] pr-3 pb-96">
-                <table className="table-auto w-full border-separate border-spacing-2">
-                  <thead>
-                    <tr>
-                      <th className=" text-nowrap text-left">Header Db</th>
-                      <th className=" text-left">Map Column</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {columnConfig?.config.map((config) => (
-                      <tr key={config.id} className="">
-                        <td scope="row">{config.column_db}</td>
-                        <td>
-                          <Input value={config.column_value} />
-                        </td>
+            <div className="flex grow shrink overflow-y-scroll overflow-x-hidden basis-[576px] items-start">
+              <div className="flex">
+                <div className=" w-[576px] pr-3 pb-40">
+                  <table className="table-auto w-full border-separate border-spacing-2">
+                    <thead>
+                      <tr>
+                        <th className=" text-nowrap text-left">Header Db</th>
+                        <th className=" text-left">Map Column</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      {columnConfig?.config.map((config) => (
+                        <tr key={config.id} className="">
+                          <td scope="row">{config.column_db}</td>
+                          <td>
+                            <Input value={config.column_value} onChange={() => { }} />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div className=" fixed top-6 right-4 pr-4">
+              <div className="w-8">
                 <div
                   onClick={() => setActiveMenu(false)}
                   className=" h-8 w-8 rounded-full border flex justify-center items-center cursor-pointer"

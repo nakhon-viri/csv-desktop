@@ -1,6 +1,8 @@
 "use strict";
 const electron = require("electron");
 electron.contextBridge.exposeInMainWorld("electron", {
-  ping: (...args) => electron.ipcRenderer.invoke("ping", ...args),
-  columnConfig: (...args) => electron.ipcRenderer.invoke("get_column_config", ...args)
+  insertShopee: (...args) => electron.ipcRenderer.invoke("insertShopee", ...args),
+  insertMc: (...args) => electron.ipcRenderer.invoke("insertMc", ...args),
+  columnConfig: (...args) => electron.ipcRenderer.invoke("get_column_config", ...args),
+  updateColumnConfig: (...args) => electron.ipcRenderer.invoke("updateColumnConfig", ...args)
 });

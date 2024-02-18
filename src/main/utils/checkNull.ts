@@ -1,0 +1,1 @@
+export const checkNull = (value) => value && value !== 0 ? `'${value}'` : null

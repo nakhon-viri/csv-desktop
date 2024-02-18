@@ -1,10 +1,10 @@
 
 
 
-export const fileReader = () => {
-    return new Promise((resolve, reject) => {
+export const fileReaderXlsx = (file) => {
+    return new Promise<ProgressEvent<FileReader>>((resolve, reject) => {
         const reader = new FileReader();
-        reader.readAsBinaryString(e.target.files[0]);
+        reader.readAsBinaryString(file);
         reader.onload = (e: any) => {
             resolve(e)
         };

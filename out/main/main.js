@@ -29634,7 +29634,6 @@ const poolConnection = mysql.createPool({
   port: 3306
 });
 const db = drizzle(poolConnection);
-let mainWindow;
 const insertShopee = async (args) => {
   let raw = "";
   try {
@@ -29770,6 +29769,116 @@ const insertShopee = async (args) => {
     return error;
   }
 };
+const checkNull = (value) => value && value !== 0 ? `'${value}'` : null;
+const insertMc = async (args) => {
+  let raw = "";
+  try {
+    const chunkSize = 1e4;
+    const chunks = [];
+    for (let i = 0; i < args[0].length; i += chunkSize) {
+      const chunk = args[0].slice(i, i + chunkSize);
+      chunks.push(chunk);
+    }
+    const res = [];
+    for (let index = 0; index < chunks.length; index++) {
+      const insertValue = chunks[index].map(
+        (item) => `(
+        ${checkNull(item.order_id)},
+        ${checkNull(item.status)},
+        ${checkNull(item.emp)},
+        ${checkNull(item.invoice)},
+        ${checkNull(item.payment)},
+        ${checkNull(item.discount)},
+        ${checkNull(item.sale)},
+        ${checkNull(item.transport_service_provider)},
+        ${checkNull(item.quantity)},
+        ${checkNull(item.shipping_cost)},
+        ${checkNull(item.cod_cost)},
+        ${checkNull(item.tracking_number)},
+        ${checkNull(item.channel)},
+        ${checkNull(item.channel_name)},
+        ${checkNull(item.name)},
+        ${checkNull(item.phone)},
+        ${checkNull(item.address)},
+        ${checkNull(item.subdistrict)},
+        ${checkNull(item.district)},
+        ${checkNull(item.province)},
+        ${checkNull(item.zipcode)},
+        ${checkNull(item.pack_date)},
+        ${checkNull(item.create_date)},
+        ${checkNull(item.paid_date)},
+        ${checkNull(item.seller_discount)},
+        ${checkNull(item.platform_discount)},
+        ${checkNull(item.coin)},
+        ${checkNull(item.sku_code)},
+        ${checkNull(item.product_name)},
+        ${checkNull(item.product_options)},
+        ${checkNull(item.price_per_piece)},
+        ${checkNull(item.discount_per_piece)},
+        ${checkNull(item.quantity_product)},
+        ${checkNull(item.note)},
+        ${checkNull(item.id_mc)},
+        ${checkNull(item.discount_per_product_p)},
+        ${checkNull(item.shipping_cost_p)},
+        ${checkNull(item.cod_cost_p)},
+        ${checkNull(item.sale_per_product_p)},
+        ${checkNull(item.channel_p)},
+        ${checkNull(item.type_chit)},
+        ${checkNull(item.product_name_p)}
+    )`
+      ).join(", ");
+      raw = `INSERT INTO MC (
+    order_id,
+    status,
+    emp,
+    invoice,
+    payment,
+    discount,
+    sale,
+    transport_service_provider,
+    quantity,
+    shipping_cost,
+    cod_cost,
+    tracking_number,
+    channel,
+    channel_name,
+    name,
+    phone,
+    address,
+    subdistrict,
+    district,
+    province,
+    zipcode,
+    pack_date,
+    create_date,
+    paid_date,
+    seller_discount,
+    platform_discount,
+    coin,
+    sku_code,
+    product_name,
+    product_options,
+    price_per_piece,
+    discount_per_piece,
+    quantity_product,
+    note,
+    id_mc,
+    discount_per_product_p,
+    shipping_cost_p,
+    cod_cost_p,
+    sale_per_product_p,
+    channel_p,
+    type_chit,
+    product_name_p
+          ) VALUES  ${insertValue};`;
+      const result = await db.execute(sql.raw(raw));
+      res.push(result);
+    }
+    return res;
+  } catch (error) {
+    return error;
+  }
+};
 const getColumnConfig = async (args) => {
   try {
     const result = await db.execute(
@@ -29782,6 +29891,44 @@ const getColumnConfig = async (args) => {
     return error;
   }
 };
+const updateConfig = async (args) => {
+  try {
+    const updateValues = args[0].map(
+      (item) => `(
+                ${checkNull(item.platform)},
+                ${checkNull(item.column_db)},
+                ${checkNull(item.column_value)}
+            )`
+    ).join(", ");
+    const rawSql = `
+                INSERT INTO column_configs (platform, column_db, column_value)
+                VALUES ${updateValues}
+                ON DUPLICATE KEY UPDATE 
+                column_value=VALUES(column_value);
+            `;
+    const result = await db.execute(
+      sql.raw(rawSql)
+    );
+    return { result, rawSql };
+  } catch (error) {
+    return error;
+  }
+};
+const loadApi = () => {
+  electron.ipcMain.handle("insertShopee", async (event, ...args) => {
+    return insertShopee(args);
+  });
+  electron.ipcMain.handle("insertMc", async (event, ...args) => {
+    return insertMc(args);
+  });
+  electron.ipcMain.handle("get_column_config", async (event, ...args) => {
+    return getColumnConfig(args);
+  });
+  electron.ipcMain.handle("updateColumnConfig", async (event, ...args) => {
+    return updateConfig(args);
+  });
+};
+let mainWindow;
 function createWindow() {
   mainWindow = new electron.BrowserWindow({
     // minWidth: 1200,
@@ -29794,12 +29941,7 @@ function createWindow() {
     }
   });
   mainWindow.webContents.openDevTools();
-  electron.ipcMain.handle("ping", async (event, ...args) => {
-    return insertShopee(args);
-  });
-  electron.ipcMain.handle("get_column_config", async (event, ...args) => {
-    return getColumnConfig(args);
-  });
+  loadApi();
   mainWindow.loadURL("http://localhost:5173");
   mainWindow.on("closed", () => mainWindow = null);
 }

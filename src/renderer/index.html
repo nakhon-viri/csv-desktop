@@ -10,13 +10,5 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      const func = async () => {
-        const response = await window.electron.ping();
-        console.log(response); // prints out 'pong'
-      };
-
-      func();
-    </script>
   </body>
 </html>

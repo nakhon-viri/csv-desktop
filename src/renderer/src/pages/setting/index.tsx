@@ -36,13 +36,13 @@ const Setting = (props: Props, ref) => {
         <div ref={ref} className="absolute top-0 bottom-0 right-0 left-0">
             <div className="flex h-full pr-1">
                 <div className="flex grow basis-36 shrink-0 justify-end">
-                    <div className=" w-36">
+                    <div className="pt-4 w-36">
                         <div>
                             <div className="mb-2 pl-3 text-muted-foreground text-xs text-ellipsis text-nowrap overflow-hidden">
                                 platform
                             </div>
                             <ul>
-                                {["shopee", "mc"].map(
+                                {["shopee", "mc" , "lazada"].map(
                                     (platform, i) => (
                                         <li
                                             onClick={() => loadConfig(platform)}
@@ -57,7 +57,7 @@ const Setting = (props: Props, ref) => {
                         </div>
                     </div>
                 </div>
-                <div className="flex grow shrink overflow-y-hidden hover:overflow-y-scroll overflow-x-hidden basis-[600px] items-start">
+                <div className="flex grow shrink overflow-y-hidden pt-4 hover:overflow-y-scroll overflow-x-hidden basis-[600px] items-start">
                     <div className="flex">
                         <div className=" w-[576px] pb-40">
                             {columnConfig ? <TableColumn columnConfig={columnConfig.config} /> : null}

@@ -4,6 +4,7 @@ import { sql } from "drizzle-orm";
 import { insertShopee } from "./controllers/shopee/insert_shopee";
 import { insertMc } from "./controllers/mc/insert_mc";
 import { checkNull } from "./utils/checkNull";
+import { insertLazada } from "./controllers/lazada/insert_lazada";
 
 
 
@@ -49,6 +50,10 @@ export const loadApi = () => {
     ipcMain.handle("insertShopee", async (event, ...args) => {
         return insertShopee(args);
     });
+
+     ipcMain.handle("insertLazada", async (event, ...args) => {
+       return insertLazada(args);
+     });
 
     ipcMain.handle("insertMc", async (event, ...args) => {
         return insertMc(args);

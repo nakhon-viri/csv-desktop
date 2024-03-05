@@ -20,7 +20,7 @@ import { Toaster } from "./components/ui/sonner";
 import { mcToDb } from "./lib/convert-platform/mc";
 import Setting from "./pages/setting";
 import { lazadaToDb } from "./lib/convert-platform/lazada";
-import moment from "moment";
+// import moment from "moment";
 
 type Platform = { label: string; value: string };
 
@@ -51,9 +51,8 @@ function App() {
   const settingNode = useRef(null);
   const mainNode = useRef(null);
 
-  const date = "07 jan 2024 17:11";
-  const dateConvert = moment(date);
-  console.log("dateConvert", dateConvert);
+  // const date = "07 jan 2024 17:11";
+  // const dateConvert = moment(date);
 
   const handleFileUpload = async (e: any) => {
     let column: any = {};
@@ -62,7 +61,7 @@ function App() {
       const responseColumn = await window.electron.columnConfig({
         platform: "shopee",
       });
-      column = responseColumn[0].reduce((acc, cur) => {
+      column = responseColumn.reduce((acc, cur) => {
         acc[cur.column_db] = cur.column_value;
         return acc;
       }, {});
@@ -102,7 +101,7 @@ function App() {
 
   return (
     <div className=" h-screen relative w-screen flex justify-center items-center overflow-hidden">
-      <Toaster position="bottom-center" />
+      <Toaster position="bottom-center"  />
       <CSSTransition
         nodeRef={mainNode}
         in={!activeMenu}

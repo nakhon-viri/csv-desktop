@@ -65,7 +65,7 @@ export const insertMc = async (args) => {
                 )
                 .join(", ");
 
-            raw = `INSERT INTO MC (
+            raw = `REPLACE INTO MC (
     order_id,
     status,
     emp,

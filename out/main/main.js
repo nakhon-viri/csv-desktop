@@ -3631,7 +3631,7 @@ function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
 }
 var promise = {};
-var mysql2 = {};
+var mysql2$1 = {};
 var SqlString = {};
 (function(exports) {
   var SqlString2 = exports;
@@ -21955,330 +21955,322 @@ var auth_41 = {};
   }
   exports.xorRotating = xorRotating2;
 })(auth_41);
-var charset_encodings;
-var hasRequiredCharset_encodings;
-function requireCharset_encodings() {
-  if (hasRequiredCharset_encodings)
-    return charset_encodings;
-  hasRequiredCharset_encodings = 1;
-  charset_encodings = [
-    "utf8",
-    "big5",
-    "latin2",
-    "dec8",
-    "cp850",
-    "latin1",
-    "hp8",
-    "koi8r",
-    "latin1",
-    "latin2",
-    "swe7",
-    "ascii",
-    "eucjp",
-    "sjis",
-    "cp1251",
-    "latin1",
-    "hebrew",
-    "utf8",
-    "tis620",
-    "euckr",
-    "latin7",
-    "latin2",
-    "koi8u",
-    "cp1251",
-    "gb2312",
-    "greek",
-    "cp1250",
-    "latin2",
-    "gbk",
-    "cp1257",
-    "latin5",
-    "latin1",
-    "armscii8",
-    "cesu8",
-    "cp1250",
-    "ucs2",
-    "cp866",
-    "keybcs2",
-    "macintosh",
-    "macroman",
-    "cp852",
-    "latin7",
-    "latin7",
-    "macintosh",
-    "cp1250",
-    "utf8",
-    "utf8",
-    "latin1",
-    "latin1",
-    "latin1",
-    "cp1251",
-    "cp1251",
-    "cp1251",
-    "macroman",
-    "utf16",
-    "utf16",
-    "utf16-le",
-    "cp1256",
-    "cp1257",
-    "cp1257",
-    "utf32",
-    "utf32",
-    "utf16-le",
-    "binary",
-    "armscii8",
-    "ascii",
-    "cp1250",
-    "cp1256",
-    "cp866",
-    "dec8",
-    "greek",
-    "hebrew",
-    "hp8",
-    "keybcs2",
-    "koi8r",
-    "koi8u",
-    "cesu8",
-    "latin2",
-    "latin5",
-    "latin7",
-    "cp850",
-    "cp852",
-    "swe7",
-    "cesu8",
-    "big5",
-    "euckr",
-    "gb2312",
-    "gbk",
-    "sjis",
-    "tis620",
-    "ucs2",
-    "eucjp",
-    "geostd8",
-    "geostd8",
-    "latin1",
-    "cp932",
-    "cp932",
-    "eucjpms",
-    "eucjpms",
-    "cp1250",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf16",
-    "utf8",
-    "utf8",
-    "utf8",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "ucs2",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "ucs2",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf32",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "cesu8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "cesu8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "gb18030",
-    "gb18030",
-    "gb18030",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8",
-    "utf8"
-  ];
-  return charset_encodings;
-}
+var charset_encodings = [
+  "utf8",
+  "big5",
+  "latin2",
+  "dec8",
+  "cp850",
+  "latin1",
+  "hp8",
+  "koi8r",
+  "latin1",
+  "latin2",
+  "swe7",
+  "ascii",
+  "eucjp",
+  "sjis",
+  "cp1251",
+  "latin1",
+  "hebrew",
+  "utf8",
+  "tis620",
+  "euckr",
+  "latin7",
+  "latin2",
+  "koi8u",
+  "cp1251",
+  "gb2312",
+  "greek",
+  "cp1250",
+  "latin2",
+  "gbk",
+  "cp1257",
+  "latin5",
+  "latin1",
+  "armscii8",
+  "cesu8",
+  "cp1250",
+  "ucs2",
+  "cp866",
+  "keybcs2",
+  "macintosh",
+  "macroman",
+  "cp852",
+  "latin7",
+  "latin7",
+  "macintosh",
+  "cp1250",
+  "utf8",
+  "utf8",
+  "latin1",
+  "latin1",
+  "latin1",
+  "cp1251",
+  "cp1251",
+  "cp1251",
+  "macroman",
+  "utf16",
+  "utf16",
+  "utf16-le",
+  "cp1256",
+  "cp1257",
+  "cp1257",
+  "utf32",
+  "utf32",
+  "utf16-le",
+  "binary",
+  "armscii8",
+  "ascii",
+  "cp1250",
+  "cp1256",
+  "cp866",
+  "dec8",
+  "greek",
+  "hebrew",
+  "hp8",
+  "keybcs2",
+  "koi8r",
+  "koi8u",
+  "cesu8",
+  "latin2",
+  "latin5",
+  "latin7",
+  "cp850",
+  "cp852",
+  "swe7",
+  "cesu8",
+  "big5",
+  "euckr",
+  "gb2312",
+  "gbk",
+  "sjis",
+  "tis620",
+  "ucs2",
+  "eucjp",
+  "geostd8",
+  "geostd8",
+  "latin1",
+  "cp932",
+  "cp932",
+  "eucjpms",
+  "eucjpms",
+  "cp1250",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf16",
+  "utf8",
+  "utf8",
+  "utf8",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "ucs2",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "ucs2",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf32",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "cesu8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "cesu8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "gb18030",
+  "gb18030",
+  "gb18030",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8",
+  "utf8"
+];
 const CommandCode$4 = commands$1;
 const ClientConstants$7 = client;
 const Packet$d = packet;
 const auth41$3 = auth_41;
-const CharsetToEncoding$7 = requireCharset_encodings();
+const CharsetToEncoding$7 = charset_encodings;
 let ChangeUser$2 = class ChangeUser {
   constructor(opts) {
     this.flags = opts.flags;
@@ -22396,7 +22388,7 @@ field_flags.ON_UPDATE_NOW = 8192;
 field_flags.NUM = 32768;
 const Packet$b = packet;
 const StringParser$2 = string;
-const CharsetToEncoding$6 = requireCharset_encodings();
+const CharsetToEncoding$6 = charset_encodings;
 const fields = ["catalog", "schema", "table", "orgTable", "name", "orgName"];
 class ColumnDefinition {
   constructor(packet2, clientEncoding) {
@@ -22645,7 +22637,7 @@ const CursorType = cursor;
 const CommandCodes$2 = commands$1;
 const Types$2 = requireTypes();
 const Packet$a = packet;
-const CharsetToEncoding$5 = requireCharset_encodings();
+const CharsetToEncoding$5 = charset_encodings;
 function isJSON(value) {
   return Array.isArray(value) || value.constructor === Object || typeof value.toJSON === "function" && !Buffer.isBuffer(value);
 }
@@ -22894,7 +22886,7 @@ class Handshake {
 }
 var handshake = Handshake;
 const ClientConstants$5 = client;
-const CharsetToEncoding$4 = requireCharset_encodings();
+const CharsetToEncoding$4 = charset_encodings;
 const Packet$8 = packet;
 const auth41$2 = auth_41;
 class HandshakeResponse {
@@ -23029,7 +23021,7 @@ var handshake_response = HandshakeResponse;
 const Packet$7 = packet;
 const CommandCodes$1 = commands$1;
 const StringParser$1 = string;
-const CharsetToEncoding$3 = requireCharset_encodings();
+const CharsetToEncoding$3 = charset_encodings;
 class PrepareStatement {
   constructor(sql2, charsetNumber) {
     this.query = sql2;
@@ -23062,7 +23054,7 @@ var prepared_statement_header = PreparedStatementHeader;
 const Packet$6 = packet;
 const CommandCode$3 = commands$1;
 const StringParser = string;
-const CharsetToEncoding$2 = requireCharset_encodings();
+const CharsetToEncoding$2 = charset_encodings;
 let Query$3 = class Query {
   constructor(sql2, charsetNumber) {
     this.query = sql2;
@@ -24007,7 +23999,7 @@ function requireCompressed_protocol() {
 const Command$a = command;
 const Packets$8 = packetsExports;
 const ClientConstants$2 = client;
-const CharsetToEncoding$1 = requireCharset_encodings();
+const CharsetToEncoding$1 = charset_encodings;
 const auth41 = auth_41;
 function flagNames(flags) {
   const res = [];
@@ -24328,328 +24320,321 @@ let ServerHandshake$1 = class ServerHandshake extends Command$9 {
 };
 var server_handshake = ServerHandshake$1;
 var charsets = {};
-var hasRequiredCharsets;
-function requireCharsets() {
-  if (hasRequiredCharsets)
-    return charsets;
-  hasRequiredCharsets = 1;
-  (function(exports) {
-    exports.BIG5_CHINESE_CI = 1;
-    exports.LATIN2_CZECH_CS = 2;
-    exports.DEC8_SWEDISH_CI = 3;
-    exports.CP850_GENERAL_CI = 4;
-    exports.LATIN1_GERMAN1_CI = 5;
-    exports.HP8_ENGLISH_CI = 6;
-    exports.KOI8R_GENERAL_CI = 7;
-    exports.LATIN1_SWEDISH_CI = 8;
-    exports.LATIN2_GENERAL_CI = 9;
-    exports.SWE7_SWEDISH_CI = 10;
-    exports.ASCII_GENERAL_CI = 11;
-    exports.UJIS_JAPANESE_CI = 12;
-    exports.SJIS_JAPANESE_CI = 13;
-    exports.CP1251_BULGARIAN_CI = 14;
-    exports.LATIN1_DANISH_CI = 15;
-    exports.HEBREW_GENERAL_CI = 16;
-    exports.TIS620_THAI_CI = 18;
-    exports.EUCKR_KOREAN_CI = 19;
-    exports.LATIN7_ESTONIAN_CS = 20;
-    exports.LATIN2_HUNGARIAN_CI = 21;
-    exports.KOI8U_GENERAL_CI = 22;
-    exports.CP1251_UKRAINIAN_CI = 23;
-    exports.GB2312_CHINESE_CI = 24;
-    exports.GREEK_GENERAL_CI = 25;
-    exports.CP1250_GENERAL_CI = 26;
-    exports.LATIN2_CROATIAN_CI = 27;
-    exports.GBK_CHINESE_CI = 28;
-    exports.CP1257_LITHUANIAN_CI = 29;
-    exports.LATIN5_TURKISH_CI = 30;
-    exports.LATIN1_GERMAN2_CI = 31;
-    exports.ARMSCII8_GENERAL_CI = 32;
-    exports.UTF8_GENERAL_CI = 33;
-    exports.CP1250_CZECH_CS = 34;
-    exports.UCS2_GENERAL_CI = 35;
-    exports.CP866_GENERAL_CI = 36;
-    exports.KEYBCS2_GENERAL_CI = 37;
-    exports.MACCE_GENERAL_CI = 38;
-    exports.MACROMAN_GENERAL_CI = 39;
-    exports.CP852_GENERAL_CI = 40;
-    exports.LATIN7_GENERAL_CI = 41;
-    exports.LATIN7_GENERAL_CS = 42;
-    exports.MACCE_BIN = 43;
-    exports.CP1250_CROATIAN_CI = 44;
-    exports.UTF8MB4_GENERAL_CI = 45;
-    exports.UTF8MB4_BIN = 46;
-    exports.LATIN1_BIN = 47;
-    exports.LATIN1_GENERAL_CI = 48;
-    exports.LATIN1_GENERAL_CS = 49;
-    exports.CP1251_BIN = 50;
-    exports.CP1251_GENERAL_CI = 51;
-    exports.CP1251_GENERAL_CS = 52;
-    exports.MACROMAN_BIN = 53;
-    exports.UTF16_GENERAL_CI = 54;
-    exports.UTF16_BIN = 55;
-    exports.UTF16LE_GENERAL_CI = 56;
-    exports.CP1256_GENERAL_CI = 57;
-    exports.CP1257_BIN = 58;
-    exports.CP1257_GENERAL_CI = 59;
-    exports.UTF32_GENERAL_CI = 60;
-    exports.UTF32_BIN = 61;
-    exports.UTF16LE_BIN = 62;
-    exports.BINARY = 63;
-    exports.ARMSCII8_BIN = 64;
-    exports.ASCII_BIN = 65;
-    exports.CP1250_BIN = 66;
-    exports.CP1256_BIN = 67;
-    exports.CP866_BIN = 68;
-    exports.DEC8_BIN = 69;
-    exports.GREEK_BIN = 70;
-    exports.HEBREW_BIN = 71;
-    exports.HP8_BIN = 72;
-    exports.KEYBCS2_BIN = 73;
-    exports.KOI8R_BIN = 74;
-    exports.KOI8U_BIN = 75;
-    exports.UTF8_TOLOWER_CI = 76;
-    exports.LATIN2_BIN = 77;
-    exports.LATIN5_BIN = 78;
-    exports.LATIN7_BIN = 79;
-    exports.CP850_BIN = 80;
-    exports.CP852_BIN = 81;
-    exports.SWE7_BIN = 82;
-    exports.UTF8_BIN = 83;
-    exports.BIG5_BIN = 84;
-    exports.EUCKR_BIN = 85;
-    exports.GB2312_BIN = 86;
-    exports.GBK_BIN = 87;
-    exports.SJIS_BIN = 88;
-    exports.TIS620_BIN = 89;
-    exports.UCS2_BIN = 90;
-    exports.UJIS_BIN = 91;
-    exports.GEOSTD8_GENERAL_CI = 92;
-    exports.GEOSTD8_BIN = 93;
-    exports.LATIN1_SPANISH_CI = 94;
-    exports.CP932_JAPANESE_CI = 95;
-    exports.CP932_BIN = 96;
-    exports.EUCJPMS_JAPANESE_CI = 97;
-    exports.EUCJPMS_BIN = 98;
-    exports.CP1250_POLISH_CI = 99;
-    exports.UTF16_UNICODE_CI = 101;
-    exports.UTF16_ICELANDIC_CI = 102;
-    exports.UTF16_LATVIAN_CI = 103;
-    exports.UTF16_ROMANIAN_CI = 104;
-    exports.UTF16_SLOVENIAN_CI = 105;
-    exports.UTF16_POLISH_CI = 106;
-    exports.UTF16_ESTONIAN_CI = 107;
-    exports.UTF16_SPANISH_CI = 108;
-    exports.UTF16_SWEDISH_CI = 109;
-    exports.UTF16_TURKISH_CI = 110;
-    exports.UTF16_CZECH_CI = 111;
-    exports.UTF16_DANISH_CI = 112;
-    exports.UTF16_LITHUANIAN_CI = 113;
-    exports.UTF16_SLOVAK_CI = 114;
-    exports.UTF16_SPANISH2_CI = 115;
-    exports.UTF16_ROMAN_CI = 116;
-    exports.UTF16_PERSIAN_CI = 117;
-    exports.UTF16_ESPERANTO_CI = 118;
-    exports.UTF16_HUNGARIAN_CI = 119;
-    exports.UTF16_SINHALA_CI = 120;
-    exports.UTF16_GERMAN2_CI = 121;
-    exports.UTF16_CROATIAN_CI = 122;
-    exports.UTF16_UNICODE_520_CI = 123;
-    exports.UTF16_VIETNAMESE_CI = 124;
-    exports.UCS2_UNICODE_CI = 128;
-    exports.UCS2_ICELANDIC_CI = 129;
-    exports.UCS2_LATVIAN_CI = 130;
-    exports.UCS2_ROMANIAN_CI = 131;
-    exports.UCS2_SLOVENIAN_CI = 132;
-    exports.UCS2_POLISH_CI = 133;
-    exports.UCS2_ESTONIAN_CI = 134;
-    exports.UCS2_SPANISH_CI = 135;
-    exports.UCS2_SWEDISH_CI = 136;
-    exports.UCS2_TURKISH_CI = 137;
-    exports.UCS2_CZECH_CI = 138;
-    exports.UCS2_DANISH_CI = 139;
-    exports.UCS2_LITHUANIAN_CI = 140;
-    exports.UCS2_SLOVAK_CI = 141;
-    exports.UCS2_SPANISH2_CI = 142;
-    exports.UCS2_ROMAN_CI = 143;
-    exports.UCS2_PERSIAN_CI = 144;
-    exports.UCS2_ESPERANTO_CI = 145;
-    exports.UCS2_HUNGARIAN_CI = 146;
-    exports.UCS2_SINHALA_CI = 147;
-    exports.UCS2_GERMAN2_CI = 148;
-    exports.UCS2_CROATIAN_CI = 149;
-    exports.UCS2_UNICODE_520_CI = 150;
-    exports.UCS2_VIETNAMESE_CI = 151;
-    exports.UCS2_GENERAL_MYSQL500_CI = 159;
-    exports.UTF32_UNICODE_CI = 160;
-    exports.UTF32_ICELANDIC_CI = 161;
-    exports.UTF32_LATVIAN_CI = 162;
-    exports.UTF32_ROMANIAN_CI = 163;
-    exports.UTF32_SLOVENIAN_CI = 164;
-    exports.UTF32_POLISH_CI = 165;
-    exports.UTF32_ESTONIAN_CI = 166;
-    exports.UTF32_SPANISH_CI = 167;
-    exports.UTF32_SWEDISH_CI = 168;
-    exports.UTF32_TURKISH_CI = 169;
-    exports.UTF32_CZECH_CI = 170;
-    exports.UTF32_DANISH_CI = 171;
-    exports.UTF32_LITHUANIAN_CI = 172;
-    exports.UTF32_SLOVAK_CI = 173;
-    exports.UTF32_SPANISH2_CI = 174;
-    exports.UTF32_ROMAN_CI = 175;
-    exports.UTF32_PERSIAN_CI = 176;
-    exports.UTF32_ESPERANTO_CI = 177;
-    exports.UTF32_HUNGARIAN_CI = 178;
-    exports.UTF32_SINHALA_CI = 179;
-    exports.UTF32_GERMAN2_CI = 180;
-    exports.UTF32_CROATIAN_CI = 181;
-    exports.UTF32_UNICODE_520_CI = 182;
-    exports.UTF32_VIETNAMESE_CI = 183;
-    exports.UTF8_UNICODE_CI = 192;
-    exports.UTF8_ICELANDIC_CI = 193;
-    exports.UTF8_LATVIAN_CI = 194;
-    exports.UTF8_ROMANIAN_CI = 195;
-    exports.UTF8_SLOVENIAN_CI = 196;
-    exports.UTF8_POLISH_CI = 197;
-    exports.UTF8_ESTONIAN_CI = 198;
-    exports.UTF8_SPANISH_CI = 199;
-    exports.UTF8_SWEDISH_CI = 200;
-    exports.UTF8_TURKISH_CI = 201;
-    exports.UTF8_CZECH_CI = 202;
-    exports.UTF8_DANISH_CI = 203;
-    exports.UTF8_LITHUANIAN_CI = 204;
-    exports.UTF8_SLOVAK_CI = 205;
-    exports.UTF8_SPANISH2_CI = 206;
-    exports.UTF8_ROMAN_CI = 207;
-    exports.UTF8_PERSIAN_CI = 208;
-    exports.UTF8_ESPERANTO_CI = 209;
-    exports.UTF8_HUNGARIAN_CI = 210;
-    exports.UTF8_SINHALA_CI = 211;
-    exports.UTF8_GERMAN2_CI = 212;
-    exports.UTF8_CROATIAN_CI = 213;
-    exports.UTF8_UNICODE_520_CI = 214;
-    exports.UTF8_VIETNAMESE_CI = 215;
-    exports.UTF8_GENERAL_MYSQL500_CI = 223;
-    exports.UTF8MB4_UNICODE_CI = 224;
-    exports.UTF8MB4_ICELANDIC_CI = 225;
-    exports.UTF8MB4_LATVIAN_CI = 226;
-    exports.UTF8MB4_ROMANIAN_CI = 227;
-    exports.UTF8MB4_SLOVENIAN_CI = 228;
-    exports.UTF8MB4_POLISH_CI = 229;
-    exports.UTF8MB4_ESTONIAN_CI = 230;
-    exports.UTF8MB4_SPANISH_CI = 231;
-    exports.UTF8MB4_SWEDISH_CI = 232;
-    exports.UTF8MB4_TURKISH_CI = 233;
-    exports.UTF8MB4_CZECH_CI = 234;
-    exports.UTF8MB4_DANISH_CI = 235;
-    exports.UTF8MB4_LITHUANIAN_CI = 236;
-    exports.UTF8MB4_SLOVAK_CI = 237;
-    exports.UTF8MB4_SPANISH2_CI = 238;
-    exports.UTF8MB4_ROMAN_CI = 239;
-    exports.UTF8MB4_PERSIAN_CI = 240;
-    exports.UTF8MB4_ESPERANTO_CI = 241;
-    exports.UTF8MB4_HUNGARIAN_CI = 242;
-    exports.UTF8MB4_SINHALA_CI = 243;
-    exports.UTF8MB4_GERMAN2_CI = 244;
-    exports.UTF8MB4_CROATIAN_CI = 245;
-    exports.UTF8MB4_UNICODE_520_CI = 246;
-    exports.UTF8MB4_VIETNAMESE_CI = 247;
-    exports.GB18030_CHINESE_CI = 248;
-    exports.GB18030_BIN = 249;
-    exports.GB18030_UNICODE_520_CI = 250;
-    exports.UTF8_GENERAL50_CI = 253;
-    exports.UTF8MB4_0900_AI_CI = 255;
-    exports.UTF8MB4_DE_PB_0900_AI_CI = 256;
-    exports.UTF8MB4_IS_0900_AI_CI = 257;
-    exports.UTF8MB4_LV_0900_AI_CI = 258;
-    exports.UTF8MB4_RO_0900_AI_CI = 259;
-    exports.UTF8MB4_SL_0900_AI_CI = 260;
-    exports.UTF8MB4_PL_0900_AI_CI = 261;
-    exports.UTF8MB4_ET_0900_AI_CI = 262;
-    exports.UTF8MB4_ES_0900_AI_CI = 263;
-    exports.UTF8MB4_SV_0900_AI_CI = 264;
-    exports.UTF8MB4_TR_0900_AI_CI = 265;
-    exports.UTF8MB4_CS_0900_AI_CI = 266;
-    exports.UTF8MB4_DA_0900_AI_CI = 267;
-    exports.UTF8MB4_LT_0900_AI_CI = 268;
-    exports.UTF8MB4_SK_0900_AI_CI = 269;
-    exports.UTF8MB4_ES_TRAD_0900_AI_CI = 270;
-    exports.UTF8MB4_LA_0900_AI_CI = 271;
-    exports.UTF8MB4_EO_0900_AI_CI = 273;
-    exports.UTF8MB4_HU_0900_AI_CI = 274;
-    exports.UTF8MB4_HR_0900_AI_CI = 275;
-    exports.UTF8MB4_VI_0900_AI_CI = 277;
-    exports.UTF8MB4_0900_AS_CS = 278;
-    exports.UTF8MB4_DE_PB_0900_AS_CS = 279;
-    exports.UTF8MB4_IS_0900_AS_CS = 280;
-    exports.UTF8MB4_LV_0900_AS_CS = 281;
-    exports.UTF8MB4_RO_0900_AS_CS = 282;
-    exports.UTF8MB4_SL_0900_AS_CS = 283;
-    exports.UTF8MB4_PL_0900_AS_CS = 284;
-    exports.UTF8MB4_ET_0900_AS_CS = 285;
-    exports.UTF8MB4_ES_0900_AS_CS = 286;
-    exports.UTF8MB4_SV_0900_AS_CS = 287;
-    exports.UTF8MB4_TR_0900_AS_CS = 288;
-    exports.UTF8MB4_CS_0900_AS_CS = 289;
-    exports.UTF8MB4_DA_0900_AS_CS = 290;
-    exports.UTF8MB4_LT_0900_AS_CS = 291;
-    exports.UTF8MB4_SK_0900_AS_CS = 292;
-    exports.UTF8MB4_ES_TRAD_0900_AS_CS = 293;
-    exports.UTF8MB4_LA_0900_AS_CS = 294;
-    exports.UTF8MB4_EO_0900_AS_CS = 296;
-    exports.UTF8MB4_HU_0900_AS_CS = 297;
-    exports.UTF8MB4_HR_0900_AS_CS = 298;
-    exports.UTF8MB4_VI_0900_AS_CS = 300;
-    exports.UTF8MB4_JA_0900_AS_CS = 303;
-    exports.UTF8MB4_JA_0900_AS_CS_KS = 304;
-    exports.UTF8MB4_0900_AS_CI = 305;
-    exports.UTF8MB4_RU_0900_AI_CI = 306;
-    exports.UTF8MB4_RU_0900_AS_CS = 307;
-    exports.UTF8MB4_ZH_0900_AS_CS = 308;
-    exports.UTF8MB4_0900_BIN = 309;
-    exports.BIG5 = exports.BIG5_CHINESE_CI;
-    exports.DEC8 = exports.DEC8_SWEDISH_CI;
-    exports.CP850 = exports.CP850_GENERAL_CI;
-    exports.HP8 = exports.HP8_ENGLISH_CI;
-    exports.KOI8R = exports.KOI8R_GENERAL_CI;
-    exports.LATIN1 = exports.LATIN1_SWEDISH_CI;
-    exports.LATIN2 = exports.LATIN2_GENERAL_CI;
-    exports.SWE7 = exports.SWE7_SWEDISH_CI;
-    exports.ASCII = exports.ASCII_GENERAL_CI;
-    exports.UJIS = exports.UJIS_JAPANESE_CI;
-    exports.SJIS = exports.SJIS_JAPANESE_CI;
-    exports.HEBREW = exports.HEBREW_GENERAL_CI;
-    exports.TIS620 = exports.TIS620_THAI_CI;
-    exports.EUCKR = exports.EUCKR_KOREAN_CI;
-    exports.KOI8U = exports.KOI8U_GENERAL_CI;
-    exports.GB2312 = exports.GB2312_CHINESE_CI;
-    exports.GREEK = exports.GREEK_GENERAL_CI;
-    exports.CP1250 = exports.CP1250_GENERAL_CI;
-    exports.GBK = exports.GBK_CHINESE_CI;
-    exports.LATIN5 = exports.LATIN5_TURKISH_CI;
-    exports.ARMSCII8 = exports.ARMSCII8_GENERAL_CI;
-    exports.UTF8 = exports.UTF8_GENERAL_CI;
-    exports.UCS2 = exports.UCS2_GENERAL_CI;
-    exports.CP866 = exports.CP866_GENERAL_CI;
-    exports.KEYBCS2 = exports.KEYBCS2_GENERAL_CI;
-    exports.MACCE = exports.MACCE_GENERAL_CI;
-    exports.MACROMAN = exports.MACROMAN_GENERAL_CI;
-    exports.CP852 = exports.CP852_GENERAL_CI;
-    exports.LATIN7 = exports.LATIN7_GENERAL_CI;
-    exports.UTF8MB4 = exports.UTF8MB4_GENERAL_CI;
-    exports.CP1251 = exports.CP1251_GENERAL_CI;
-    exports.UTF16 = exports.UTF16_GENERAL_CI;
-    exports.UTF16LE = exports.UTF16LE_GENERAL_CI;
-    exports.CP1256 = exports.CP1256_GENERAL_CI;
-    exports.CP1257 = exports.CP1257_GENERAL_CI;
-    exports.UTF32 = exports.UTF32_GENERAL_CI;
-    exports.CP932 = exports.CP932_JAPANESE_CI;
-    exports.EUCJPMS = exports.EUCJPMS_JAPANESE_CI;
-    exports.GB18030 = exports.GB18030_CHINESE_CI;
-    exports.GEOSTD8 = exports.GEOSTD8_GENERAL_CI;
-  })(charsets);
-  return charsets;
-}
+(function(exports) {
+  exports.BIG5_CHINESE_CI = 1;
+  exports.LATIN2_CZECH_CS = 2;
+  exports.DEC8_SWEDISH_CI = 3;
+  exports.CP850_GENERAL_CI = 4;
+  exports.LATIN1_GERMAN1_CI = 5;
+  exports.HP8_ENGLISH_CI = 6;
+  exports.KOI8R_GENERAL_CI = 7;
+  exports.LATIN1_SWEDISH_CI = 8;
+  exports.LATIN2_GENERAL_CI = 9;
+  exports.SWE7_SWEDISH_CI = 10;
+  exports.ASCII_GENERAL_CI = 11;
+  exports.UJIS_JAPANESE_CI = 12;
+  exports.SJIS_JAPANESE_CI = 13;
+  exports.CP1251_BULGARIAN_CI = 14;
+  exports.LATIN1_DANISH_CI = 15;
+  exports.HEBREW_GENERAL_CI = 16;
+  exports.TIS620_THAI_CI = 18;
+  exports.EUCKR_KOREAN_CI = 19;
+  exports.LATIN7_ESTONIAN_CS = 20;
+  exports.LATIN2_HUNGARIAN_CI = 21;
+  exports.KOI8U_GENERAL_CI = 22;
+  exports.CP1251_UKRAINIAN_CI = 23;
+  exports.GB2312_CHINESE_CI = 24;
+  exports.GREEK_GENERAL_CI = 25;
+  exports.CP1250_GENERAL_CI = 26;
+  exports.LATIN2_CROATIAN_CI = 27;
+  exports.GBK_CHINESE_CI = 28;
+  exports.CP1257_LITHUANIAN_CI = 29;
+  exports.LATIN5_TURKISH_CI = 30;
+  exports.LATIN1_GERMAN2_CI = 31;
+  exports.ARMSCII8_GENERAL_CI = 32;
+  exports.UTF8_GENERAL_CI = 33;
+  exports.CP1250_CZECH_CS = 34;
+  exports.UCS2_GENERAL_CI = 35;
+  exports.CP866_GENERAL_CI = 36;
+  exports.KEYBCS2_GENERAL_CI = 37;
+  exports.MACCE_GENERAL_CI = 38;
+  exports.MACROMAN_GENERAL_CI = 39;
+  exports.CP852_GENERAL_CI = 40;
+  exports.LATIN7_GENERAL_CI = 41;
+  exports.LATIN7_GENERAL_CS = 42;
+  exports.MACCE_BIN = 43;
+  exports.CP1250_CROATIAN_CI = 44;
+  exports.UTF8MB4_GENERAL_CI = 45;
+  exports.UTF8MB4_BIN = 46;
+  exports.LATIN1_BIN = 47;
+  exports.LATIN1_GENERAL_CI = 48;
+  exports.LATIN1_GENERAL_CS = 49;
+  exports.CP1251_BIN = 50;
+  exports.CP1251_GENERAL_CI = 51;
+  exports.CP1251_GENERAL_CS = 52;
+  exports.MACROMAN_BIN = 53;
+  exports.UTF16_GENERAL_CI = 54;
+  exports.UTF16_BIN = 55;
+  exports.UTF16LE_GENERAL_CI = 56;
+  exports.CP1256_GENERAL_CI = 57;
+  exports.CP1257_BIN = 58;
+  exports.CP1257_GENERAL_CI = 59;
+  exports.UTF32_GENERAL_CI = 60;
+  exports.UTF32_BIN = 61;
+  exports.UTF16LE_BIN = 62;
+  exports.BINARY = 63;
+  exports.ARMSCII8_BIN = 64;
+  exports.ASCII_BIN = 65;
+  exports.CP1250_BIN = 66;
+  exports.CP1256_BIN = 67;
+  exports.CP866_BIN = 68;
+  exports.DEC8_BIN = 69;
+  exports.GREEK_BIN = 70;
+  exports.HEBREW_BIN = 71;
+  exports.HP8_BIN = 72;
+  exports.KEYBCS2_BIN = 73;
+  exports.KOI8R_BIN = 74;
+  exports.KOI8U_BIN = 75;
+  exports.UTF8_TOLOWER_CI = 76;
+  exports.LATIN2_BIN = 77;
+  exports.LATIN5_BIN = 78;
+  exports.LATIN7_BIN = 79;
+  exports.CP850_BIN = 80;
+  exports.CP852_BIN = 81;
+  exports.SWE7_BIN = 82;
+  exports.UTF8_BIN = 83;
+  exports.BIG5_BIN = 84;
+  exports.EUCKR_BIN = 85;
+  exports.GB2312_BIN = 86;
+  exports.GBK_BIN = 87;
+  exports.SJIS_BIN = 88;
+  exports.TIS620_BIN = 89;
+  exports.UCS2_BIN = 90;
+  exports.UJIS_BIN = 91;
+  exports.GEOSTD8_GENERAL_CI = 92;
+  exports.GEOSTD8_BIN = 93;
+  exports.LATIN1_SPANISH_CI = 94;
+  exports.CP932_JAPANESE_CI = 95;
+  exports.CP932_BIN = 96;
+  exports.EUCJPMS_JAPANESE_CI = 97;
+  exports.EUCJPMS_BIN = 98;
+  exports.CP1250_POLISH_CI = 99;
+  exports.UTF16_UNICODE_CI = 101;
+  exports.UTF16_ICELANDIC_CI = 102;
+  exports.UTF16_LATVIAN_CI = 103;
+  exports.UTF16_ROMANIAN_CI = 104;
+  exports.UTF16_SLOVENIAN_CI = 105;
+  exports.UTF16_POLISH_CI = 106;
+  exports.UTF16_ESTONIAN_CI = 107;
+  exports.UTF16_SPANISH_CI = 108;
+  exports.UTF16_SWEDISH_CI = 109;
+  exports.UTF16_TURKISH_CI = 110;
+  exports.UTF16_CZECH_CI = 111;
+  exports.UTF16_DANISH_CI = 112;
+  exports.UTF16_LITHUANIAN_CI = 113;
+  exports.UTF16_SLOVAK_CI = 114;
+  exports.UTF16_SPANISH2_CI = 115;
+  exports.UTF16_ROMAN_CI = 116;
+  exports.UTF16_PERSIAN_CI = 117;
+  exports.UTF16_ESPERANTO_CI = 118;
+  exports.UTF16_HUNGARIAN_CI = 119;
+  exports.UTF16_SINHALA_CI = 120;
+  exports.UTF16_GERMAN2_CI = 121;
+  exports.UTF16_CROATIAN_CI = 122;
+  exports.UTF16_UNICODE_520_CI = 123;
+  exports.UTF16_VIETNAMESE_CI = 124;
+  exports.UCS2_UNICODE_CI = 128;
+  exports.UCS2_ICELANDIC_CI = 129;
+  exports.UCS2_LATVIAN_CI = 130;
+  exports.UCS2_ROMANIAN_CI = 131;
+  exports.UCS2_SLOVENIAN_CI = 132;
+  exports.UCS2_POLISH_CI = 133;
+  exports.UCS2_ESTONIAN_CI = 134;
+  exports.UCS2_SPANISH_CI = 135;
+  exports.UCS2_SWEDISH_CI = 136;
+  exports.UCS2_TURKISH_CI = 137;
+  exports.UCS2_CZECH_CI = 138;
+  exports.UCS2_DANISH_CI = 139;
+  exports.UCS2_LITHUANIAN_CI = 140;
+  exports.UCS2_SLOVAK_CI = 141;
+  exports.UCS2_SPANISH2_CI = 142;
+  exports.UCS2_ROMAN_CI = 143;
+  exports.UCS2_PERSIAN_CI = 144;
+  exports.UCS2_ESPERANTO_CI = 145;
+  exports.UCS2_HUNGARIAN_CI = 146;
+  exports.UCS2_SINHALA_CI = 147;
+  exports.UCS2_GERMAN2_CI = 148;
+  exports.UCS2_CROATIAN_CI = 149;
+  exports.UCS2_UNICODE_520_CI = 150;
+  exports.UCS2_VIETNAMESE_CI = 151;
+  exports.UCS2_GENERAL_MYSQL500_CI = 159;
+  exports.UTF32_UNICODE_CI = 160;
+  exports.UTF32_ICELANDIC_CI = 161;
+  exports.UTF32_LATVIAN_CI = 162;
+  exports.UTF32_ROMANIAN_CI = 163;
+  exports.UTF32_SLOVENIAN_CI = 164;
+  exports.UTF32_POLISH_CI = 165;
+  exports.UTF32_ESTONIAN_CI = 166;
+  exports.UTF32_SPANISH_CI = 167;
+  exports.UTF32_SWEDISH_CI = 168;
+  exports.UTF32_TURKISH_CI = 169;
+  exports.UTF32_CZECH_CI = 170;
+  exports.UTF32_DANISH_CI = 171;
+  exports.UTF32_LITHUANIAN_CI = 172;
+  exports.UTF32_SLOVAK_CI = 173;
+  exports.UTF32_SPANISH2_CI = 174;
+  exports.UTF32_ROMAN_CI = 175;
+  exports.UTF32_PERSIAN_CI = 176;
+  exports.UTF32_ESPERANTO_CI = 177;
+  exports.UTF32_HUNGARIAN_CI = 178;
+  exports.UTF32_SINHALA_CI = 179;
+  exports.UTF32_GERMAN2_CI = 180;
+  exports.UTF32_CROATIAN_CI = 181;
+  exports.UTF32_UNICODE_520_CI = 182;
+  exports.UTF32_VIETNAMESE_CI = 183;
+  exports.UTF8_UNICODE_CI = 192;
+  exports.UTF8_ICELANDIC_CI = 193;
+  exports.UTF8_LATVIAN_CI = 194;
+  exports.UTF8_ROMANIAN_CI = 195;
+  exports.UTF8_SLOVENIAN_CI = 196;
+  exports.UTF8_POLISH_CI = 197;
+  exports.UTF8_ESTONIAN_CI = 198;
+  exports.UTF8_SPANISH_CI = 199;
+  exports.UTF8_SWEDISH_CI = 200;
+  exports.UTF8_TURKISH_CI = 201;
+  exports.UTF8_CZECH_CI = 202;
+  exports.UTF8_DANISH_CI = 203;
+  exports.UTF8_LITHUANIAN_CI = 204;
+  exports.UTF8_SLOVAK_CI = 205;
+  exports.UTF8_SPANISH2_CI = 206;
+  exports.UTF8_ROMAN_CI = 207;
+  exports.UTF8_PERSIAN_CI = 208;
+  exports.UTF8_ESPERANTO_CI = 209;
+  exports.UTF8_HUNGARIAN_CI = 210;
+  exports.UTF8_SINHALA_CI = 211;
+  exports.UTF8_GERMAN2_CI = 212;
+  exports.UTF8_CROATIAN_CI = 213;
+  exports.UTF8_UNICODE_520_CI = 214;
+  exports.UTF8_VIETNAMESE_CI = 215;
+  exports.UTF8_GENERAL_MYSQL500_CI = 223;
+  exports.UTF8MB4_UNICODE_CI = 224;
+  exports.UTF8MB4_ICELANDIC_CI = 225;
+  exports.UTF8MB4_LATVIAN_CI = 226;
+  exports.UTF8MB4_ROMANIAN_CI = 227;
+  exports.UTF8MB4_SLOVENIAN_CI = 228;
+  exports.UTF8MB4_POLISH_CI = 229;
+  exports.UTF8MB4_ESTONIAN_CI = 230;
+  exports.UTF8MB4_SPANISH_CI = 231;
+  exports.UTF8MB4_SWEDISH_CI = 232;
+  exports.UTF8MB4_TURKISH_CI = 233;
+  exports.UTF8MB4_CZECH_CI = 234;
+  exports.UTF8MB4_DANISH_CI = 235;
+  exports.UTF8MB4_LITHUANIAN_CI = 236;
+  exports.UTF8MB4_SLOVAK_CI = 237;
+  exports.UTF8MB4_SPANISH2_CI = 238;
+  exports.UTF8MB4_ROMAN_CI = 239;
+  exports.UTF8MB4_PERSIAN_CI = 240;
+  exports.UTF8MB4_ESPERANTO_CI = 241;
+  exports.UTF8MB4_HUNGARIAN_CI = 242;
+  exports.UTF8MB4_SINHALA_CI = 243;
+  exports.UTF8MB4_GERMAN2_CI = 244;
+  exports.UTF8MB4_CROATIAN_CI = 245;
+  exports.UTF8MB4_UNICODE_520_CI = 246;
+  exports.UTF8MB4_VIETNAMESE_CI = 247;
+  exports.GB18030_CHINESE_CI = 248;
+  exports.GB18030_BIN = 249;
+  exports.GB18030_UNICODE_520_CI = 250;
+  exports.UTF8_GENERAL50_CI = 253;
+  exports.UTF8MB4_0900_AI_CI = 255;
+  exports.UTF8MB4_DE_PB_0900_AI_CI = 256;
+  exports.UTF8MB4_IS_0900_AI_CI = 257;
+  exports.UTF8MB4_LV_0900_AI_CI = 258;
+  exports.UTF8MB4_RO_0900_AI_CI = 259;
+  exports.UTF8MB4_SL_0900_AI_CI = 260;
+  exports.UTF8MB4_PL_0900_AI_CI = 261;
+  exports.UTF8MB4_ET_0900_AI_CI = 262;
+  exports.UTF8MB4_ES_0900_AI_CI = 263;
+  exports.UTF8MB4_SV_0900_AI_CI = 264;
+  exports.UTF8MB4_TR_0900_AI_CI = 265;
+  exports.UTF8MB4_CS_0900_AI_CI = 266;
+  exports.UTF8MB4_DA_0900_AI_CI = 267;
+  exports.UTF8MB4_LT_0900_AI_CI = 268;
+  exports.UTF8MB4_SK_0900_AI_CI = 269;
+  exports.UTF8MB4_ES_TRAD_0900_AI_CI = 270;
+  exports.UTF8MB4_LA_0900_AI_CI = 271;
+  exports.UTF8MB4_EO_0900_AI_CI = 273;
+  exports.UTF8MB4_HU_0900_AI_CI = 274;
+  exports.UTF8MB4_HR_0900_AI_CI = 275;
+  exports.UTF8MB4_VI_0900_AI_CI = 277;
+  exports.UTF8MB4_0900_AS_CS = 278;
+  exports.UTF8MB4_DE_PB_0900_AS_CS = 279;
+  exports.UTF8MB4_IS_0900_AS_CS = 280;
+  exports.UTF8MB4_LV_0900_AS_CS = 281;
+  exports.UTF8MB4_RO_0900_AS_CS = 282;
+  exports.UTF8MB4_SL_0900_AS_CS = 283;
+  exports.UTF8MB4_PL_0900_AS_CS = 284;
+  exports.UTF8MB4_ET_0900_AS_CS = 285;
+  exports.UTF8MB4_ES_0900_AS_CS = 286;
+  exports.UTF8MB4_SV_0900_AS_CS = 287;
+  exports.UTF8MB4_TR_0900_AS_CS = 288;
+  exports.UTF8MB4_CS_0900_AS_CS = 289;
+  exports.UTF8MB4_DA_0900_AS_CS = 290;
+  exports.UTF8MB4_LT_0900_AS_CS = 291;
+  exports.UTF8MB4_SK_0900_AS_CS = 292;
+  exports.UTF8MB4_ES_TRAD_0900_AS_CS = 293;
+  exports.UTF8MB4_LA_0900_AS_CS = 294;
+  exports.UTF8MB4_EO_0900_AS_CS = 296;
+  exports.UTF8MB4_HU_0900_AS_CS = 297;
+  exports.UTF8MB4_HR_0900_AS_CS = 298;
+  exports.UTF8MB4_VI_0900_AS_CS = 300;
+  exports.UTF8MB4_JA_0900_AS_CS = 303;
+  exports.UTF8MB4_JA_0900_AS_CS_KS = 304;
+  exports.UTF8MB4_0900_AS_CI = 305;
+  exports.UTF8MB4_RU_0900_AI_CI = 306;
+  exports.UTF8MB4_RU_0900_AS_CS = 307;
+  exports.UTF8MB4_ZH_0900_AS_CS = 308;
+  exports.UTF8MB4_0900_BIN = 309;
+  exports.BIG5 = exports.BIG5_CHINESE_CI;
+  exports.DEC8 = exports.DEC8_SWEDISH_CI;
+  exports.CP850 = exports.CP850_GENERAL_CI;
+  exports.HP8 = exports.HP8_ENGLISH_CI;
+  exports.KOI8R = exports.KOI8R_GENERAL_CI;
+  exports.LATIN1 = exports.LATIN1_SWEDISH_CI;
+  exports.LATIN2 = exports.LATIN2_GENERAL_CI;
+  exports.SWE7 = exports.SWE7_SWEDISH_CI;
+  exports.ASCII = exports.ASCII_GENERAL_CI;
+  exports.UJIS = exports.UJIS_JAPANESE_CI;
+  exports.SJIS = exports.SJIS_JAPANESE_CI;
+  exports.HEBREW = exports.HEBREW_GENERAL_CI;
+  exports.TIS620 = exports.TIS620_THAI_CI;
+  exports.EUCKR = exports.EUCKR_KOREAN_CI;
+  exports.KOI8U = exports.KOI8U_GENERAL_CI;
+  exports.GB2312 = exports.GB2312_CHINESE_CI;
+  exports.GREEK = exports.GREEK_GENERAL_CI;
+  exports.CP1250 = exports.CP1250_GENERAL_CI;
+  exports.GBK = exports.GBK_CHINESE_CI;
+  exports.LATIN5 = exports.LATIN5_TURKISH_CI;
+  exports.ARMSCII8 = exports.ARMSCII8_GENERAL_CI;
+  exports.UTF8 = exports.UTF8_GENERAL_CI;
+  exports.UCS2 = exports.UCS2_GENERAL_CI;
+  exports.CP866 = exports.CP866_GENERAL_CI;
+  exports.KEYBCS2 = exports.KEYBCS2_GENERAL_CI;
+  exports.MACCE = exports.MACCE_GENERAL_CI;
+  exports.MACROMAN = exports.MACROMAN_GENERAL_CI;
+  exports.CP852 = exports.CP852_GENERAL_CI;
+  exports.LATIN7 = exports.LATIN7_GENERAL_CI;
+  exports.UTF8MB4 = exports.UTF8MB4_GENERAL_CI;
+  exports.CP1251 = exports.CP1251_GENERAL_CI;
+  exports.UTF16 = exports.UTF16_GENERAL_CI;
+  exports.UTF16LE = exports.UTF16LE_GENERAL_CI;
+  exports.CP1256 = exports.CP1256_GENERAL_CI;
+  exports.CP1257 = exports.CP1257_GENERAL_CI;
+  exports.UTF32 = exports.UTF32_GENERAL_CI;
+  exports.CP932 = exports.CP932_JAPANESE_CI;
+  exports.EUCJPMS = exports.EUCJPMS_JAPANESE_CI;
+  exports.GB18030 = exports.GB18030_CHINESE_CI;
+  exports.GEOSTD8 = exports.GEOSTD8_GENERAL_CI;
+})(charsets);
 function commonjsRequire(path2) {
   throw new Error('Could not dynamically require "' + path2 + '". Please configure the dynamicRequireTargets or/and ignoreDynamicRequires option of @rollup/plugin-commonjs appropriately for this require call to work.');
 }
@@ -24888,7 +24873,7 @@ var parser_cache = {
   clearCache
 };
 const Types$1 = requireTypes();
-const Charsets$2 = requireCharsets();
+const Charsets$2 = charsets;
 const helpers$1 = helpers$2;
 const genFunc$1 = generateFunction;
 const parserCache$1 = parser_cache;
@@ -25351,7 +25336,7 @@ let CloseStatement$2 = class CloseStatement2 extends Command$7 {
 };
 var close_statement = CloseStatement$2;
 const FieldFlags = field_flags;
-const Charsets$1 = requireCharsets();
+const Charsets$1 = charsets;
 const Types = requireTypes();
 const helpers = helpers$2;
 const genFunc = generateFunction;
@@ -25983,7 +25968,7 @@ const Command$1 = command;
 const Packets = packetsExports;
 const ClientConstants$1 = client;
 const ClientHandshake$1 = client_handshake;
-const CharsetToEncoding = requireCharset_encodings();
+const CharsetToEncoding = charset_encodings;
 let ChangeUser$1 = class ChangeUser2 extends Command$1 {
   constructor(options, callback) {
     super();
@@ -26252,7 +26237,7 @@ function requireSsl_profiles() {
 }
 const { URL } = require$$0$6;
 const ClientConstants = client;
-const Charsets = requireCharsets();
+const Charsets = charsets;
 const { version } = require$$3;
 let SSLProfiles = null;
 const validOptions = {
@@ -27664,11 +27649,11 @@ function requireNamedPlaceholders() {
   namedPlaceholders.exports.toNumbered = toNumbered;
   return namedPlaceholders.exports;
 }
-var connection;
+var connection$1;
 var hasRequiredConnection;
 function requireConnection() {
   if (hasRequiredConnection)
-    return connection;
+    return connection$1;
   hasRequiredConnection = 1;
   const Net = require$$0$7;
   const Tls = require$$1$4;
@@ -27682,7 +27667,7 @@ function requireConnection() {
   const Packets2 = packetsExports;
   const Commands = commands;
   const ConnectionConfig3 = connection_config;
-  const CharsetToEncoding2 = requireCharset_encodings();
+  const CharsetToEncoding2 = charset_encodings;
   let _connectionId = 0;
   let convertNamedPlaceholders = null;
   class Connection extends EventEmitter2 {
@@ -28452,8 +28437,8 @@ function requireConnection() {
       return `${typeof options.nestTables}/${options.nestTables}/${options.rowsAsArray}${options.sql}`;
     }
   }
-  connection = Connection;
-  return connection;
+  connection$1 = Connection;
+  return connection$1;
 }
 var pool_connection;
 var hasRequiredPool_connection;
@@ -29033,7 +29018,7 @@ var auth_plugins = {
 var hasRequiredMysql2;
 function requireMysql2() {
   if (hasRequiredMysql2)
-    return mysql2;
+    return mysql2$1;
   hasRequiredMysql2 = 1;
   (function(exports) {
     const SqlString2 = sqlstring;
@@ -29088,11 +29073,11 @@ function requireMysql2() {
     exports.__defineGetter__("Types", () => requireTypes());
     exports.__defineGetter__(
       "Charsets",
-      () => requireCharsets()
+      () => charsets
     );
     exports.__defineGetter__(
       "CharsetToEncoding",
-      () => requireCharset_encodings()
+      () => charset_encodings
     );
     exports.setMaxParserCache = function(max) {
       parserCache2.setMaxCache(max);
@@ -29100,8 +29085,8 @@ function requireMysql2() {
     exports.clearParserCache = function() {
       parserCache2.clearCache();
     };
-  })(mysql2);
-  return mysql2;
+  })(mysql2$1);
+  return mysql2$1;
 }
 var hasRequiredPromise;
 function requirePromise() {
@@ -29604,11 +29589,11 @@ function requirePromise() {
     exports.__defineGetter__("Types", () => requireTypes());
     exports.__defineGetter__(
       "Charsets",
-      () => requireCharsets()
+      () => charsets
     );
     exports.__defineGetter__(
       "CharsetToEncoding",
-      () => requireCharset_encodings()
+      () => charset_encodings
     );
     exports.setMaxParserCache = function(max) {
       parserCache2.setMaxCache(max);
@@ -29621,90 +29606,36 @@ function requirePromise() {
 }
 var promiseExports = requirePromise();
 const mysql = /* @__PURE__ */ getDefaultExportFromCjs(promiseExports);
+var mysql2Exports = requireMysql2();
+const mysql2 = /* @__PURE__ */ getDefaultExportFromCjs(mysql2Exports);
 const poolConnection = mysql.createPool({
   host: "kathydb-do-user-15641127-0.c.db.ondigitalocean.com",
   user: "doadmin",
-  database: "Sale",
+  database: "sale_uat",
   password: "AVNS_GOHw8oogOS85hjqFb1l",
   port: 25060
-  // host: "localhost",
-  // user: "root",
-  // database: "sale",
-  // password: "1234",
-  // port: 3306,
 });
 const db = drizzle(poolConnection);
+const connection = mysql2.createConnection({
+  host: "kathydb-do-user-15641127-0.c.db.ondigitalocean.com",
+  user: "doadmin",
+  database: "sale_uat",
+  password: "AVNS_GOHw8oogOS85hjqFb1l",
+  port: 25060
+});
+const db2 = (sql2, values) => {
+  return new Promise((resolve, reject) => {
+    connection.query(sql2, values, function(err, results) {
+      if (err)
+        return reject(err);
+      return resolve(results);
+    });
+  });
+};
 const insertShopee = async (args) => {
-  let raw = "";
   try {
-    const chunkSize = 2e3;
-    const chunks = [];
-    for (let i = 0; i < args[0].length; i += chunkSize) {
-      const chunk = args[0].slice(i, i + chunkSize);
-      chunks.push(chunk);
-    }
-    const res = [];
-    for (let index = 0; index < chunks.length; index++) {
-      const insertValue = chunks[index].map(
-        (item) => `(
-    '${item.order_id}',
-    '${item.order_date}',
-    '${item.commission}',
-    '${item.quantity}',
-    '${item.status_order}',
-    '${item.cancel_reason}',
-    '${item.status_return}',
-    '${item.name_buyer}',
-    '${item.paid_date}',
-    '${item.paid_channel}',
-    '${item.paid_channel_detail}',
-    '${item.installment_plan}',
-    '${item.fee_percent}',
-    '${item.shipping_option}',
-    '${item.shipping_method}',
-    '${item.tracking_number}',
-    '${item.expected_delivery_date}',
-    '${item.delivery_date}',
-    '${item.sku_parent_reference_number}',
-    '${item.product_name}',
-    '${item.sku_reference_number}',
-    '${item.option_name}',
-    '${item.initial_price}',
-    '${item.selling_price}',
-    '${item.returned_quantity}',
-    '${item.net_selling_price}',
-    '${item.shopee_discount}',
-    '${item.seller_discount}',
-    '${item.code_coins_cashback}',
-    '${item.code_discount_shopee}',
-    '${item.code}',
-    '${item.join_bundle_deal}',
-    '${item.discount_bundle_deal_seller}',
-    '${item.discount_bundle_deal_shopee}',
-    '${item.discount_coins}',
-    '${item.all_discounts_credit_cards}',
-    '${item.transaction_fee}',
-    '${item.cost_sales_minus_coupons_coins}',
-    '${item.shipping_cost_seller}',
-    '${item.shipping_cost_shopee}',
-    '${item.return_shipping_cost}',
-    '${item.service_fee}',
-    '${item.total_amount}',
-    '${item.estimated_shipping_cost}',
-    '${item.customer_name}',
-    '${item.phone}',
-    '${item.note_buyer}',
-    '${item.address}',
-    '${item.country}',
-    '${item.district}',
-    '${item.zip_code}',
-    '${item.order_type}',
-    '${item.completed_date}',
-    '${item.record}',
-    '${item.province}'
-    )`
-      ).join(", ");
-      raw = `INSERT INTO shopee (
+    const result = await db2(
+      `INSERT INTO shopee ( 
     order_id,
     order_date,
     commission,
@@ -29760,11 +29691,10 @@ const insertShopee = async (args) => {
     completed_date,
     record,
     province
-          ) VALUES  ${insertValue};`;
-      const result = await db.execute(sql.raw(raw));
-      res.push(result);
-    }
-    return res;
+          ) VALUES ?`,
+      [args[0].platform]
+    );
+    return result;
   } catch (error) {
     return error;
   }
@@ -29827,7 +29757,7 @@ const insertMc = async (args) => {
         ${checkNull(item.product_name_p)}
     )`
       ).join(", ");
-      raw = `INSERT INTO MC (
+      raw = `REPLACE INTO MC (
     order_id,
     status,
     emp,
@@ -30056,10 +29986,9 @@ const insertLazada = async (args) => {
 };
 const getColumnConfig = async (args) => {
   try {
-    const result = await db.execute(
-      sql.raw(
-        `select * from column_configs where platform = '${args[0].platform}'`
-      )
+    const result = await db2(
+      `select * from column_configs where platform = ?`,
+      [args[0].platform]
     );
     return result;
   } catch (error) {
@@ -30081,12 +30010,10 @@ const updateConfig = async (args) => {
                 ON DUPLICATE KEY UPDATE 
                 column_value=VALUES(column_value);
             `;
-    const result = await db.execute(
-      sql.raw(rawSql)
-    );
+    const result = await db.execute(sql.raw(rawSql));
     return { result, rawSql };
   } catch (error) {
-    return error;
+    throw new Error(error);
   }
 };
 const loadApi = () => {

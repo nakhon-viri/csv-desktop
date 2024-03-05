@@ -1,5 +1,5 @@
 import { forwardRef, useEffect, useState } from 'react'
-import TableColumn from './components/platform/shopee';
+import TableColumn from './components/platform/TableColumn';
 
 export interface ListConfig {
     platform: string;
@@ -22,7 +22,7 @@ const Setting = (props: Props, ref) => {
         try {
             setColumnConfig(null);
             const response = await window.electron.columnConfig({ platform });
-            setColumnConfig({ config: response[0], platform });
+            setColumnConfig({ config: response, platform });
         } catch (error) {
             console.log("error", error);
         }

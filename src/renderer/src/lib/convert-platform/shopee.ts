@@ -4,7 +4,7 @@ import moment from "moment";
 export const shopeeToDb = (data, column) => {
     const dataValue: any[] = [];
     data.forEach((dataArr: any) => {
-        if (dataArr["สถานะการสั่งซื้อ"] === "ยกเลิกแล้ว") return;
+        // if (dataArr["สถานะการสั่งซื้อ"] === "ยกเลิกแล้ว") return;
         dataValue.push({
             order_id: dataArr[column.order_id],
             order_date: moment(dataArr[column.order_date]).format(

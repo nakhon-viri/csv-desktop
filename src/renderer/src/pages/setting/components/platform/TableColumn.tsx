@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useFieldArray, useForm } from "react-hook-form";
 import { useState } from "react";
 import { toast } from "sonner";
+import { updateColumnConfig } from "@/services/config/CONFIG_U";
 
 type Props = {
   columnConfig: ListConfig[];
@@ -36,7 +37,7 @@ const TableColumn = ({ columnConfig }: Props) => {
     try {
       setLoading(true);
       toast.loading("Loading...");
-      const response = await window.electron.updateColumnConfig(result);
+      const response = await updateColumnConfig(result)
       console.log("response", response);
       reset(data);
     } catch (error) {

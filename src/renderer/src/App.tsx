@@ -22,18 +22,19 @@ import { ComponentProvider } from "./components/ComponentProvider";
 import { insertLazada } from "./services/lazada/LAZADA_I";
 import { xlsxToData } from "./lib/xlsx";
 import { toastError } from "./lib/notiErr";
+import { insertMC } from "./services/mc/MC_I";
 
 type Platform = { label: string; value: string };
 
 const createPlatform = (label: string, value: string) => ({ value, label });
 
 const platformList = [
-  createPlatform("Shopee", "shopee"),
+  // createPlatform("Shopee", "shopee"),
   // createPlatform("Shopee Mall", "shopeemall"),
-  createPlatform("Lazada", "lazada"),
+  // createPlatform("Lazada", "lazada"),
   // createPlatform("Lazada Mall", "lazadamall"),
   // createPlatform("Tiktok", "tiktok"),
-  // createPlatform("MC", "mc"),
+  createPlatform("MC", "mc"),
   // createPlatform("PV", "pv"),
 ];
 
@@ -52,6 +53,7 @@ function App() {
       const evt = await fileReaderXlsx(e.target.files[0]);
       const data = evt.target.result;
       const parsedData = xlsxToData(data)
+      console.log('parsedData', parsedData)
       let response: any;
       switch (platform) {
         case "shopee":
@@ -59,6 +61,9 @@ function App() {
           break;
         case "lazada":
           response = await insertLazada(parsedData);
+          break;
+        case "mc":
+          response = await insertMC(parsedData);
           break;
         default:
           break;

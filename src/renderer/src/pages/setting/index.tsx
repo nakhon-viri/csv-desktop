@@ -79,6 +79,11 @@ const Setting = (props: Props, ref) => {
                     computed: (value) => loadConfig(value),
                     className: `px-3 py-1 mb-[2px] cursor-pointer ${columnConfig?.platform === 'lazada' ? 'bg-[rgba(0,0,0,.05)]' : ''} hover:bg-[rgba(0,0,0,.05)] rounded-sm`,
                     label: "lazada"
+                },
+                {
+                    computed: (value) => loadConfig(value),
+                    className: `px-3 py-1 mb-[2px] cursor-pointer ${columnConfig?.platform === 'mc' ? 'bg-[rgba(0,0,0,.05)]' : ''} hover:bg-[rgba(0,0,0,.05)] rounded-sm`,
+                    label: "mc"
                 }
             ]
         },
